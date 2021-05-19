@@ -11,6 +11,9 @@ $number = rand($low, $high);
 echo "So ban cho: " . $number . "<br>";
 function countGuess($low, $high, $number): int
 {
+    if ($low > $high){
+       return countGuess($high, $low, $number);
+    }
     $count = 0;
     while ($low <= $high) {
         $count++;
